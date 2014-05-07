@@ -1,10 +1,15 @@
 package pl.edu.knbit.qa.server;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.remoting.rmi.RmiServiceExporter;
 
 public class Server {
     public static void runAppServer() {
-        new ClassPathXmlApplicationContext("rmi-server.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+
+//        RmiServiceExporter rmiServiceExporter = (RmiServiceExporter) context.getBean(RmiServiceExporter.class);
+//        rmiServiceExporter.
     }
 
     public static void main( String[] args ) {

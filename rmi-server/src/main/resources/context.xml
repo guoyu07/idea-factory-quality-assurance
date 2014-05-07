@@ -10,7 +10,7 @@
     <import resource="classpath:hibernate.xml" />
 
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-        <property name="serviceName" value="Dictionary" />
+        <property name="serviceName" value="DictionaryService" />
         <property name="serviceInterface"
                   value="pl.edu.knbit.qa.services.DictionaryService" />
         <property name="service" ref="dictionaryService" />
