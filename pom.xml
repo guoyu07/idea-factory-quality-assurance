@@ -12,12 +12,24 @@
     <properties>
         <spring.version>3.0.0.RELEASE</spring.version>
         <spring.security.version>3.1.2.RELEASE</spring.security.version>
+
+        <jbehave.core.version>3.7.5</jbehave.core.version>
+        <jbehave.site.version>3.1.1</jbehave.site.version>
+        <truezip.version>7.7.1</truezip.version>
+        <hibernate.version>4.1.9.Final</hibernate.version>
+        <jacoco.version>0.6.2.201302030002</jacoco.version>
+
+        <oracle.ojdbc.version>11.2.0.2.0</oracle.ojdbc.version>
+
+        <jbehave.resource.phase>none</jbehave.resource.phase>
+        <jbehave.run.phase>none</jbehave.run.phase>
     </properties>
 
     <modules>
         <module>rmi-server</module>
         <module>rmi-client</module>
         <module>rmi-domain</module>
+        <module>rmi-test</module>
     </modules>
 
     <dependencyManagement>
@@ -118,6 +130,65 @@
                 <groupId>pl.edu.knbit.qa</groupId>
                 <artifactId>rmi-domain</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-core</artifactId>
+                <version>${jbehave.core.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-library</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-integration</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>junit</groupId>
+                        <artifactId>junit-dep</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-core</artifactId>
+                <version>${jbehave.core.version}</version>
+                <classifier>resources</classifier>
+                <type>zip</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-library</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-integration</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>junit</groupId>
+                        <artifactId>junit-dep</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.jbehave.site</groupId>
+                <artifactId>jbehave-site-resources</artifactId>
+                <version>${jbehave.site.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-spring</artifactId>
+                <version>${jbehave.core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
