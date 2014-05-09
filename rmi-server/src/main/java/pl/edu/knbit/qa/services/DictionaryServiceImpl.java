@@ -1,6 +1,7 @@
 package pl.edu.knbit.qa.services;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.edu.knbit.qa.dao.TableEntity;
 
 import javax.persistence.EntityManager;
@@ -17,6 +18,7 @@ public class DictionaryServiceImpl implements DictionaryService {
     private EntityManager entityManager;
 
     @Override
+    @Transactional
     public boolean addNewEntry(String key, String value) {
 
         TableEntity table = new TableEntity();

@@ -60,9 +60,14 @@ public class RMIStoriesRunner extends InjectableEmbedder {
     }
 
     private List<String> getStoryPathFilter() throws IOException {
-        String storyPathFilter = System.getProperty("storyFilter", "*") + ".story";
+        String storyPathFilter = "**/" + System.getProperty("storyFilter", "*") + ".story";
         List<String> storyPaths = new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
                 asList(storyPathFilter), null);
+
+        for ( String s : storyPaths ) {
+            System.out.println( "STORY PATH: " + s );
+        }
+
         return storyPaths;
 
     }
