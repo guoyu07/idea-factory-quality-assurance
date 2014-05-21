@@ -23,6 +23,17 @@
 
         <jbehave.resource.phase>generate-resources</jbehave.resource.phase>
         <jbehave.run.phase>integration-test</jbehave.run.phase>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.language>java</sonar.language>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <!--<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>-->
+        <!--<sonar.jacoco.reportPath>${project.basedir}/reports/jacoco.exec</sonar.jacoco.reportPath>-->
+        <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <!--<sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>-->
+        <sonar.jdbc.url>jdbc:postgresql://localhost:5432/sonar</sonar.jdbc.url>
+        <sonar.jdbc.username>postgres</sonar.jdbc.username>
+        <sonar.jdbc.password>postgres</sonar.jdbc.password>
     </properties>
 
     <modules>
@@ -195,6 +206,50 @@
                 <groupId>org.jbehave</groupId>
                 <artifactId>jbehave-spring</artifactId>
                 <version>${jbehave.core.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>1.3</version>
+                <!--<scope>test</scope>-->
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>hamcrest-core</artifactId>
+                        <groupId>org.hamcrest</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <!--<scope>test</scope>-->
+            </dependency>
+            <dependency>
+                <groupId>com.github.springtestdbunit</groupId>
+                <artifactId>spring-test-dbunit</artifactId>
+                <version>1.0.0</version>
+                <!--<scope>test</scope>-->
+            </dependency>
+            <dependency>
+                <groupId>org.dbunit</groupId>
+                <artifactId>dbunit</artifactId>
+                <version>2.4.9</version>
+                <!--<scope>test</scope>-->
+                <exclusions>
+                    <exclusion>
+                        <artifactId>junit</artifactId>
+                        <groupId>junit</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
     </dependencyManagement>

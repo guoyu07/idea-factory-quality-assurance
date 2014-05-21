@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Idea Factory - Quality Assurance</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Jak dbać o jakość kodu?</h1>
+
+                    <p>
+                        <small><a href="https://github.com/pprzetacznik/idea-factory-quality-assurance">https://github.com/pprzetacznik/idea-factory-quality-assurance</a></small>
+                    </p>
+					<p>
+						<small><a href="http://www.if.org.pl">Idea Factory</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Problemy współczesnej inżynierii oprogramowania</h3>
+                    <ul>
+                        <li>Projekty "zmierzające ku klęsce" (Edward Yourdon)</li>
+                        <li>Nowe funkcjonalności, który psują stare funkcjonalności</li>
+                        <li>Wdrożenia nowych pracowników</li>
+                        <li>Niezrozumiały kod dla reszty zespołu</li>
+                        <li>Brak dokumentacji</li>
+                    </ul>
+				</section>
+
+				<section>
+					<section>
+						<h3>Jak udowodnić, że aplikacja działa?</h3>
+						<p>
+							Przeprowadzić dowód matematyczny/informatyczny?
+						</p>
+                        <p>
+                            <p class="fragment highlight-red">W praktyce niemożliwe do wykonania</p>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Jak udowodnić, że aplikacja działa?</h3>
+                        <p>
+                            Podejście pragmatyczne - Metodyki zwinne i testy
+                        </p>
+                        <p>
+                        <p class="fragment highlight-green">Program działa jeśli przechodzi testy</p>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Trochę o Agile'u</h3>
+                    <ul>
+                        <li>Standupy i jakieś inne mniej ważne na dzisiejszej prezentacji rzeczy</li>
+                        <li>Iteracje</li>
+                        <li>Kontakt z klientem</li>
+                        <li>Demo</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Testujemy ponieważ:</h3>
+                    <ul>
+                        <li>Chcemy zamrozić dotychczasowe funkcjonalności</li>
+                        <li>Chcemy zaprezentować innym członkom zespołu użycie naszego kodu</li>
+                        <li>Szybciej tworzymy funkcjonalności</li>
+                        <li>Szybciej znajdujemy błędy</li>
+                        <li>Zmiany w systemie są bezpieczniejsze</li>
+                        <li>KAŻDY PROGRAM MA BŁĘDY - pytanie ile z nich, i jak ważnych, potrafimy wyłapać przed czasem</li>
+                        <li>Manager wymaga od nas statystyk kodu</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Rodzaje testów</h3>
+                    <ul>
+                        <li>Testy jednostkowe</li>
+                        <li>Testy integracyjne</li>
+                        <li>Testy akceptacyjne</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Test Driven Development</h3>
+                    <ul>
+                        <li>Piszemy testy do małych funkcjonalności, które nie przechodzą</li>
+                        <li>Implementujemy małe funkcjonalności, żeby testy przeszły</li>
+                        <li>Refaktorujemy kod</li>
+                        <li>Kroki powtarzamy, aż napiszemy ukończymy całą funkcjonalność</li>
+                        <li>Sprawdzamy czy testy pozostałych funkcjonalności działają poprzez uruchomienie odpowiednich testów</li>
+                        <li>Jeżeli stare testy nie działają, poprawiamy błędy</li>
+                        <li>KATA - <a href="http://osherove.com/tdd-kata-1/">http://osherove.com/tdd-kata-1/</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Behaviour Driven Development</h3>
+                    <ul>
+                        <li>Zachowania aplikacji</li>
+                        <li>Testujemy tak jakby aplikację testował klient</li>
+                        <li>Próbujemy skrócić żmudny proces manualnego testowania do minimum</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Stack technologiczny (Java)</h3>
+                    <ul>
+                        <li>JUnit</li>
+                        <li>Hamcrest / Fest</li>
+                        <li>DBUnit</li>
+                        <li>Spring-Test</li>
+                        <li>JBehave</li>
+                        <li>Jacoco</li>
+                        <li>Sonar</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Demo</h3>
+
+                    <p>
+                        <small><a href="https://github.com/pprzetacznik/idea-factory-quality-assurance">https://github.com/pprzetacznik/idea-factory-quality-assurance</a></small>
+                    </p>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
