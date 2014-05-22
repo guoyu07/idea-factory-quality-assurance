@@ -33,7 +33,7 @@ import static org.jbehave.core.reporters.Format.*;
 @RunWith(SpringAnnotatedEmbedderRunner.class)
 @Configure(using = MostUsefulConfiguration.class, pendingStepStrategy = FailingUponPendingStep.class)
 @UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, ignoreFailureInStories = true, ignoreFailureInView = false, storyTimeoutInSecs = 600, threads = 1, metaFilters = "-skip")
-@UsingSpring(resources = {"rmi-tests.xml"})
+@UsingSpring(resources = {"/rmi-tests.xml"})
 @UsingSteps
 public class RMIStoriesRunner extends InjectableEmbedder {
 

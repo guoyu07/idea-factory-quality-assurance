@@ -1,4 +1,4 @@
-package pl.edu.knbit.qa.services;
+package pl.edu.knbit.qa.spi;
 
 import java.util.Map;
 
@@ -8,4 +8,5 @@ public interface DictionaryService {
 
     public Map<String, String> getDictionary();
 
+    boolean contains(String key, String value);
 }

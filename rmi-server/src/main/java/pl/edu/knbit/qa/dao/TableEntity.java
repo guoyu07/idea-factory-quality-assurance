@@ -2,16 +2,16 @@ package pl.edu.knbit.qa.dao;
 
 import javax.persistence.*;
 
-@javax.persistence.Table(name = "table", schema = "public", catalog = "postgres")
 @Entity
+@Table(name = "dictionary", schema = "public", catalog = "postgres")
 @NamedQueries({
-        @NamedQuery(name="Table.selectAll", query = "SELECT t FROM TableEntity t ORDER BY t.key DESC")
+        @NamedQuery(name= "dictionary.selectAll", query = "SELECT t FROM TableEntity t ORDER BY t.key DESC")
 })
 public class TableEntity {
     private String key;
     private String value;
 
-    @javax.persistence.Column(name = "key")
+    @Column(name = "key")
     @Id
     public String getKey() {
         return key;
@@ -21,7 +21,7 @@ public class TableEntity {
         this.key = key;
     }
 
-    @javax.persistence.Column(name = "value")
+    @Column(name = "value")
     @Basic
     public String getValue() {
         return value;

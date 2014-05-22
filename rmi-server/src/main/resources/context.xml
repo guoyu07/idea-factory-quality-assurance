@@ -12,7 +12,7 @@
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
         <property name="serviceName" value="DictionaryService" />
         <property name="serviceInterface"
-                  value="pl.edu.knbit.qa.services.DictionaryService" />
+                  value="pl.edu.knbit.qa.spi.DictionaryService" />
         <property name="service" ref="dictionaryService" />
     </bean>
 

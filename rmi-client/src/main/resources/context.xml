@@ -8,7 +8,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     <bean id="dictionaryService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
         <property name="serviceUrl" value="rmi://localhost:1099/DictionaryService" />
         <property name="serviceInterface"
-                  value="pl.edu.knbit.qa.services.DictionaryService" />
+                  value="pl.edu.knbit.qa.spi.DictionaryService" />
     </bean>
 
     <context:annotation-config />
