@@ -7,12 +7,10 @@ import org.springframework.remoting.rmi.RmiServiceExporter;
 public class Server {
     public static void runAppServer() {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-
-//        RmiServiceExporter rmiServiceExporter = (RmiServiceExporter) context.getBean(RmiServiceExporter.class);
-//        rmiServiceExporter.
     }
 
     public static void main( String[] args ) {
+
         try {
             runAppServer();
         } catch (Exception e) {

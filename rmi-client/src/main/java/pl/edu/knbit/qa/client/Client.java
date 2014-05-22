@@ -12,7 +12,9 @@ public class Client {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         DictionaryServiceClient dictionaryServiceClient = (DictionaryServiceClient) context.getBean("dictionaryClient");
 
-        dictionaryServiceClient.addNewEntry("ala", "makota");
+        long timestamp = System.currentTimeMillis();
+
+        dictionaryServiceClient.addNewEntry("Key@Client" + timestamp, "Value@Client" + timestamp);
 
         for (Map.Entry<String, String> entry : dictionaryServiceClient.getDictionary().entrySet() ) {
             System.out.println( entry.getKey() + " => " + entry.getValue() );

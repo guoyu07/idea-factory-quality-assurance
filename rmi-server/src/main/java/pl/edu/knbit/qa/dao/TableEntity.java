@@ -3,7 +3,7 @@ package pl.edu.knbit.qa.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "dictionary", schema = "public", catalog = "postgres")
+@Table(name = "dictionary")
 @NamedQueries({
         @NamedQuery(name= "dictionary.selectAll", query = "SELECT t FROM TableEntity t ORDER BY t.key DESC")
 })
