@@ -53,14 +53,20 @@
 				</section>
 
 				<section>
-					<h3>Problemy współczesnej inżynierii oprogramowania</h3>
-                    <ul>
-                        <li>Projekty "zmierzające ku klęsce" (Edward Yourdon)</li>
-                        <li>Nowe funkcjonalności, który psują stare funkcjonalności</li>
-                        <li>Wdrożenia nowych pracowników</li>
-                        <li>Niezrozumiały kod dla reszty zespołu</li>
-                        <li>Brak dokumentacji</li>
-                    </ul>
+                    <section>
+                        <h3>Problemy współczesnej inżynierii oprogramowania</h3>
+                        <ul>
+                            <li>Projekty "zmierzające ku klęsce" (Edward Yourdon)</li>
+                            <li>Nowe funkcjonalności, który psują stare funkcjonalności</li>
+                            <li>Wdrożenia nowych pracowników</li>
+                            <li>Niezrozumiały kod dla reszty zespołu</li>
+                            <li>Brak dokumentacji</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <img src="lol/shenanigans.jpg" />
+                    </section>
 				</section>
 
 				<section>
@@ -96,16 +102,26 @@
                 </section>
 
                 <section>
-                    <h3>Testujemy ponieważ:</h3>
-                    <ul>
-                        <li>Chcemy zamrozić dotychczasowe funkcjonalności</li>
-                        <li>Chcemy zaprezentować innym członkom zespołu użycie naszego kodu</li>
-                        <li>Szybciej tworzymy funkcjonalności</li>
-                        <li>Szybciej znajdujemy błędy</li>
-                        <li>Zmiany w systemie są bezpieczniejsze</li>
-                        <li>KAŻDY PROGRAM MA BŁĘDY - pytanie ile z nich, i jak ważnych, potrafimy wyłapać przed czasem</li>
-                        <li>Manager wymaga od nas statystyk kodu</li>
-                    </ul>
+                    <section>
+                        <h3>Testujemy ponieważ:</h3>
+                        <ul>
+                            <li>Chcemy zamrozić dotychczasowe funkcjonalności</li>
+                            <li>Chcemy zaprezentować innym członkom zespołu użycie naszego kodu</li>
+                            <li>Szybciej tworzymy funkcjonalności</li>
+                            <li>Szybciej znajdujemy błędy</li>
+                            <li>Zmiany w systemie są bezpieczniejsze</li>
+                            <li>KAŻDY PROGRAM MA BŁĘDY - pytanie ile z nich, i jak ważnych, potrafimy wyłapać przed czasem</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Testujemy również ponieważ:</h3>
+                        <ul>
+                            <li>Manager wymaga od nas statystyk jakości naszego kodu</li>
+                        </ul>
+
+                        <img src="lol/file.jpg" />
+                    </section>
                 </section>
 
                 <section>
@@ -113,7 +129,7 @@
                     <ul>
                         <li>Testy jednostkowe</li>
                         <li>Testy integracyjne</li>
-                        <li>Testy akceptacyjne</li>
+                        <li>Szeroko pojęte testy akceptacyjne</li>
                     </ul>
                 </section>
 
@@ -140,24 +156,97 @@
                 </section>
 
                 <section>
-                    <h3>Stack technologiczny (Java)</h3>
-                    <ul>
-                        <li>JUnit</li>
-                        <li>Hamcrest / Fest</li>
-                        <li>DBUnit</li>
-                        <li>Spring-Test</li>
-                        <li>JBehave</li>
-                        <li>Jacoco</li>
-                        <li>Sonar</li>
-                    </ul>
+                    <section>
+                        <h3>Stack technologiczny (Java)</h3>
+                        <ul>
+                            <li>JUnit</li>
+                            <li>Hamcrest / Fest</li>
+                            <li>Mockito</li>
+                            <li>DBUnit</li>
+                            <li>Spring-Test</li>
+                            <li>JBehave</li>
+                            <li>Jacoco</li>
+                            <li>Sonar</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Mockowanie</h3>
+
+                        <img src="lol/mock.jpeg" />
+                    </section>
+
+                    <section>
+                        <h3>Mockito</h3>
+
+                        <pre><code class="java" data-trim contenteditable>
+@Test
+public void test1()  {
+    MyClass test = Mockito.mock(MyClass.class);
+
+    // define return value for method getUniqueId()
+    test.when(test.getUniqueId()).thenReturn(43);
+
+    // TODO use mock in test....
+}
+                        </code></pre>
+                     </section>
+
+                    <section>
+                        <h3>Hamcrest</h3>
+
+                        <pre><code class="java" data-trim contenteditable>
+@Test
+public void test2() {
+    Biscuit theBiscuit = new Biscuit("Ginger");
+    Biscuit myBiscuit = new Biscuit("Ginger");
+    assertThat(theBiscuit, equalTo(myBiscuit));
+}
+                        </code></pre>
+                    </section>
+
+
                 </section>
 
                 <section>
-                    <h3>Demo</h3>
+                    <section>
+                        <h3>Demo</h3>
 
-                    <p>
-                        <small><a href="https://github.com/pprzetacznik/idea-factory-quality-assurance">https://github.com/pprzetacznik/idea-factory-quality-assurance</a></small>
-                    </p>
+                        <p>
+                            <small><a href="https://github.com/pprzetacznik/idea-factory-quality-assurance">https://github.com/pprzetacznik/idea-factory-quality-assurance</a></small>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Odpalamy kod</h3>
+
+                        <p>Kompilujemy kod:</p>
+                        <pre><code class="java" data-trim contenteditable>
+                        mvn install
+                        </code></pre>
+
+                        <p>Testy akceptacyjne nie przeszły</p>
+
+                        <p>Odpalamy serwer razem z javaagentem</p>
+                        <pre><code class="java" data-trim contenteditable>
+                            java.exe" -javaagent:org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=jacoco-it.exec -cp "rmi-server/target/classes;rmi-server/target/lib/*;rmi-client/target/classes;rmi-client/target/lib/*;" pl.edu.knbit.qa.server.Server
+                        </code></pre>
+
+                        <p>Odpalamy jeszcze raz wszystkie testy</p>
+                        <pre><code class="java" data-trim contenteditable>
+                        mvn install
+                        </code></pre>
+
+                        <p>Odpalamy sonara</p>
+                        <pre><code class="java" data-trim contenteditable>
+                        sonar-runner
+                        </code></pre>
+
+                    </section>
+                </section>
+
+                <section>
+                    <img src="lol/mustache.jpg" />
                 </section>
 
 			</div>
